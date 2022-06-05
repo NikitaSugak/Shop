@@ -12,7 +12,8 @@
         <h1>Product list</h1>
         <a href="/addproduct"><input type="button" value="ADD" /></a>
 
-        <form action="/php/delete_items.php" method="POST">
+        <form  method="POST">
+        <!-- <form action="/php/delete_items.php" method="POST"> -->
             <button name="button">MASS DELETE</button>
             <form>
             <hr>

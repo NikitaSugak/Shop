@@ -13,7 +13,11 @@ class Furniture extends Item
     function __construct($params)
     {
         parent::__construct($params);
-        $this->setDimensions($params['value']);
+        if (isset($params["value"])) {
+            $this->setDimensions($params['value']);
+        } else {
+            $this->setDimensions($params['height'] . 'x'. $params['width'] . 'x'. $params['length']);
+        }
     }
 
     function setDimensions($value)
@@ -40,6 +44,11 @@ class Furniture extends Item
         $this->length = $length;
     }
 
+    function getDimensions()
+    {
+        return $this->getHeight() . 'x' .  $this->getWidth() . 'x' . $this->getLength();
+    }
+
     function getHeight()
     {
         return $this->height;
@@ -57,19 +66,12 @@ class Furniture extends Item
 
     public function printValue()
     {
-        echo "Dimension " . $this->getHeight() . "x" . $this->getWidth() . "x". $this->getLength() . "<br />";
+        echo "Dimension " . $this->getHeight() . "x" . $this->getWidth() . "x" . $this->getLength() . "<br />";
     }
 
     public function save_in_bd()
     {
-        try {
-            $conn = new PDO('mysql:host=localhost', 'root', 'admin');
-        } catch(Exception $e){
-            echo 'Connection failed: ' . $e->getMessage();
-        }
-        
-        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->sku ."', '". $this->name ."', '". $this->price ."', 'furniture', '". $this->value ."')";
-        
-        $conn->query($sql);
+        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('" . $this->getSKU() . "', '" . $this->getName() . "', '" . $this->getPrice() . "', 'furniture', '" . $this->getDimensions() . "')";
+        Database::executeSql($sql);
     }
 }

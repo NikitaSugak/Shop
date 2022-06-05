@@ -43,10 +43,34 @@ class Item
         return $this->id;
     }
 
+    function getSKU()
+    {
+        return $this->sku;
+    }
+
+    function getName()
+    {
+        return $this->name;
+    }
+
+    function getPrice()
+    {
+        return $this->price;
+    }
+
     public function printAboutItem()
     {
         echo $this->sku . "<br />";
         echo $this->name . "<br />";
         echo number_format($this->price, 2, '.', '') . " $" . "<br />";
+    }
+
+    public static function delete_in_bd($idCheckItems)
+    {
+        for ($i = 0; $i < count($idCheckItems); $i++) {
+            $sql = "DELETE FROM shop.items WHERE id =  '$idCheckItems[$i]'";
+            Database::executeSql($sql);
+        }
+        header('Location: ' . '..');
     }
 }

@@ -11,7 +11,11 @@ class Disc extends Item
     function __construct($params)
     {
         parent::__construct($params);
-        $this->setSize($params['value']);
+        if (isset($params["value"])) {
+            $this->setSize($params['value']);
+        } else {
+            $this->setSize($params['size']);
+        }
     }
 
     function setSize($size)
@@ -31,14 +35,7 @@ class Disc extends Item
 
     public function save_in_bd()
     {
-        try {
-            $conn = new PDO('mysql:host=localhost', 'root', 'admin');
-        } catch(Exception $e){
-            echo 'Connection failed: ' . $e->getMessage();
-        }
-        
-        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->sku ."', '". $this->name ."', '". $this->price ."', 'disc', '". $this->value ."')";
-
-        $conn->query($sql);
+        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->getSKU() ."', '". $this->getName() ."', '". $this->getPrice() ."', 'disc', '". $this->size ."')";
+        Database::executeSql($sql);
     }
 }

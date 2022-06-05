@@ -11,7 +11,11 @@ class Book extends Item
     function __construct($params)
     {
         parent::__construct($params);
-        $this->setWeight($params['value']);
+        if (isset($params['value'])) {
+            $this->setWeight($params['value']);
+        } else {
+            $this->setWeight($params['weight']);
+        }
     }
 
     function setWeight($weight)
@@ -31,14 +35,7 @@ class Book extends Item
 
     public function save_in_bd()
     {
-        try {
-            $conn = new PDO('mysql:host=localhost', 'root', 'admin');
-        } catch(Exception $e){
-            echo 'Connection failed: ' . $e->getMessage();
-        }
-        
-        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->sku ."', '". $this->name ."', '". $this->price ."', 'book', '". $this->value ."')";
-
-        $conn->query($sql);
+        $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->getSku() ."', '". $this->getName() ."', '". $this->getPrice() ."', 'book', '". $this->getWeight() ."')";
+        Database::executeSql($sql);
     }
 }
