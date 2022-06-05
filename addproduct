@@ -6,12 +6,13 @@
     <title>Product add</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="/view/showItemAttribute.js"></script>
 </head>
 
 <body>
     <div class='container'>
         <h1>Product add</h1>
-        <form  action="/php/save.php" method="POST" id="product_form">
+        <form  action="/controller/save.php" method="POST" id="product_form">
             <button name="save">Save</button>
             <button name="cansel">Cansel</button>
             <hr>
@@ -29,28 +30,7 @@
         </form>
 
         <script>
-            $(function () {
-                $('#productType').on('change', function () {
-                    var value = $(this).val();
-                    $('#attributesItem').text("");
-                    switch (value) {
-                        case 'disc':
-                            $('#attributesItem').append("Size (MB)<input required type='number' name='size' id='size'><br />");
-                            $('#attributesItem').append("Please, provide size");
-                            break;
-                        case 'book':
-                            $('#attributesItem').append("Weight (KG)<input required type='number' name='weight' id='weight'><br />");
-                            $('#attributesItem').append("Please, provide weight");
-                            break;
-                        case 'furniture':
-                            $('#attributesItem').append("Height (CM)<input required type='number' min='1' name='height' id='height'><br />");
-                            $('#attributesItem').append("Width (CM)<input required type='number' min='1' name='width' id='width'><br />");
-                            $('#attributesItem').append("Lenght (CM)<input required type='number' min='1' name='length' id='length'><br />");
-                            $('#attributesItem').append("Please, provide dimensions");
-                            break;
-                    }
-                });
-            });
+           
         </script>
     </div>
 </body>

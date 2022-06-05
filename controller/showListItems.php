@@ -1,5 +1,5 @@
 <?php
-include_once "php/ListItems.php";
+include_once "ListItems.php";
 $list = new ListItems();
 $list->drowListItems();
 

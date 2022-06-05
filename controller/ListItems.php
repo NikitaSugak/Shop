@@ -1,7 +1,7 @@
 <?php
-include_once 'php/Model/Book.php';
-include_once 'php/Model/Furniture.php';
-include_once 'php/Model/Disc.php';
+include_once './model/Book.php';
+include_once './model/Furniture.php';
+include_once './model/Disc.php';
 
 class listItems
 {

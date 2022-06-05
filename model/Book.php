@@ -37,5 +37,6 @@ class Book extends Item
     {
         $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('". $this->getSku() ."', '". $this->getName() ."', '". $this->getPrice() ."', 'book', '". $this->getWeight() ."')";
         Database::executeSql($sql);
+        header('Location: ' . '..');
     }
 }

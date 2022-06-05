@@ -71,6 +71,7 @@ class Item
             $sql = "DELETE FROM shop.items WHERE id =  '$idCheckItems[$i]'";
             Database::executeSql($sql);
         }
+        
         header('Location: ' . '..');
     }
 }

@@ -21,8 +21,8 @@
     <br />
 
     <?php
-    include_once "Database.php";
-    include_once "php/showListItems.php";
+    include_once "controller/Database.php";
+    include_once "controller/showListItems.php";
     ?>
 </body>
 
