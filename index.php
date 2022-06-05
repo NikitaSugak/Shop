@@ -13,7 +13,6 @@
         <a href="/addproduct"><input type="button" value="ADD" /></a>
 
         <form  method="POST">
-        <!-- <form action="/php/delete_items.php" method="POST"> -->
             <button name="button">MASS DELETE</button>
             <form>
             <hr>
@@ -21,7 +20,6 @@
     <br />
 
     <?php
-    include_once "controller/Database.php";
     include_once "controller/showListItems.php";
     ?>
 </body>

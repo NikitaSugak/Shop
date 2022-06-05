@@ -73,6 +73,5 @@ class Furniture extends Item
     {
         $sql = "INSERT INTO shop.items (`sku`, `name`, `price`, `type`, `value`) VALUES ('" . $this->getSKU() . "', '" . $this->getName() . "', '" . $this->getPrice() . "', 'furniture', '" . $this->getDimensions() . "')";
         Database::executeSql($sql);
-        header('Location: ' . '..');
     }
 }

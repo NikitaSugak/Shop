@@ -10,3 +10,4 @@ if (isset($_POST["save"])) {
     $item->save_in_bd(); 
 }
 
+header('Location: ' . '..');

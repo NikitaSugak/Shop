@@ -7,6 +7,7 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="/jQuery/jquery-3.6.0.min.js"></script>
     <script src="/view/showItemAttribute.js"></script>
+    <script src="/controller/save.php"></script>
 </head>
 
 <body>
@@ -28,10 +29,6 @@
             <div class="attributes" id="attributesItem">
             </div>
         </form>
-
-        <script>
-           
-        </script>
     </div>
 </body>
 

@@ -1,8 +1,5 @@
 <?php
 
-/**
-Class model book
- */
 class Database
 {
     public static function executeSql($sql)
