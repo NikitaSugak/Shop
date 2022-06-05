@@ -1,17 +1,32 @@
 <?php
-include_once 'item.php';
+include_once 'Item.php';
 
 /**
 Class model disc
  */
 class Disc extends Item
 {
-    public function printAboutItem()
+    private $size;
+
+    function __construct($params)
     {
-        echo $this->sku . "<br />";
-        echo $this->name . "<br />";
-        echo number_format($this->price, 2, '.', '') . " $" . "<br />";
-        echo "Size " . $this->value . " MB <br />";
+        parent::__construct($params);
+        $this->setSize($params['value']);
+    }
+
+    function setSize($size)
+    {
+        $this->size = $size;
+    }
+
+    function getSize()
+    {
+        return $this->size;
+    }
+
+    public function printValue()
+    {
+        echo "Size " . $this->getSize() . " MB <br />";
     }
 
     public function save_in_bd()

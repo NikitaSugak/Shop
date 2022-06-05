@@ -43,9 +43,9 @@
                             $('#attributesItem').append("Please, provide weight");
                             break;
                         case 'furniture':
-                            $('#attributesItem').append("Height (CM)<input required type='number' name='height' id='height'><br />");
-                            $('#attributesItem').append("Width (CM)<input required type='number' name='width' id='width'><br />");
-                            $('#attributesItem').append("Lenght (CM)<input required type='number' name='length' id='length'><br />");
+                            $('#attributesItem').append("Height (CM)<input required type='number' min='1' name='height' id='height'><br />");
+                            $('#attributesItem').append("Width (CM)<input required type='number' min='1' name='width' id='width'><br />");
+                            $('#attributesItem').append("Lenght (CM)<input required type='number' min='1' name='length' id='length'><br />");
                             $('#attributesItem').append("Please, provide dimensions");
                             break;
                     }

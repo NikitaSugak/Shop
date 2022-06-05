@@ -20,10 +20,8 @@
     <br />
 
     <?php
-    include_once "php/listItems.php";
-    require_once "vendor/autoload.php";
-    $list = new listItems();
-    $list->drowListItems();
+    include_once "Database.php";
+    include_once "php/showListItems.php";
     ?>
 </body>
 

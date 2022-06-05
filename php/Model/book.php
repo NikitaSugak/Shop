@@ -1,17 +1,32 @@
 <?php
-include_once 'item.php';
+include_once 'Item.php';
 
 /**
 Class model book
  */
 class Book extends Item
 {
-    public function printAboutItem()
+    private $weight;
+
+    function __construct($params)
     {
-        echo $this->sku . "<br />";
-        echo $this->name . "<br />";
-        echo number_format($this->price, 2, '.', '') . " $" . "<br />";
-        echo "Weight " . $this->value . " KG <br />";
+        parent::__construct($params);
+        $this->setWeight($params['value']);
+    }
+
+    function setWeight($weight)
+    {
+        $this->weight = $weight;
+    }
+
+    function getWeight()
+    {
+        return $this->weight;
+    }
+
+    public function printValue()
+    {
+        echo "Weight " . $this->getWeight(). " KG <br />";
     }
 
     public function save_in_bd()

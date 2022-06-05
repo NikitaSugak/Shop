@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST["checkItems"])) {
+    echo 'Connection failed: ' ;
     $idCheckItems = $_POST["checkItems"];
     for ($i = 0; $i < count($idCheckItems); $i++) {
         try {
@@ -8,15 +9,16 @@ if (isset($_POST["checkItems"])) {
             echo 'Connection failed: ' . $e->getMessage();
         }
         
+
         for ($i=0; $i < count($idCheckItems); $i++) { 
             $sql = "DELETE FROM shop.items WHERE id =  '$idCheckItems[$i]'";
-            if($conn->query($sql)){
+            
+            $conn->query($sql);
          
             
-            }
-            else{
-                echo "Ошибка: " . $conn->error;
-            }
+            
+              
+        
             
         } 
     }
