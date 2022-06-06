@@ -1,11 +1,11 @@
 .container {
   padding: 0px 10% 0px 10%;
+  font-size: 14pt;
 }
 
 .tile {
   width: 20%;
   float: left;
-  font-size: 14pt;
   margin: 2%; 
   border: solid;
   box-sizing: border-box;
@@ -21,6 +21,11 @@
 .attributes {
   width: 35%;
   margin-top: 20px;
-  font-size: 14pt;
   box-sizing: border-box;
+}
+
+.footer {
+  padding: 300px 10% 0px 10%;
+  font-size: 14pt;
+  text-align: center;
 }

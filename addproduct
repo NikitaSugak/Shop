@@ -13,14 +13,14 @@
 <body>
     <div class='container'>
         <h1>Product add</h1>
-        <form  action="/controller/save.php" method="POST" id="product_form">
+        <form action="/controller/save.php" method="POST" id="product_form">
             <button name="save">Save</button>
             <button name="cansel">Cansel</button>
             <hr>
             <p>SKY<input required type="text" id="sku" name="sku" /></p>
-            <p>Name<input  required type="text" id="name" name="name" /></p>
+            <p>Name<input required type="text" id="name" name="name" /></p>
             <p>Price ($)<input required type="text" pattern="\d+(\.\d{2})?" id="price" name="price" /></p>
-            Type Switcher <select  required name="productType" id="productType" size="1">
+            Type Switcher <select required name="productType" id="productType" size="1">
                 <option value="">Type Switcher</option>
                 <option value="disc">DVD</option>
                 <option value="book">Book</option>
@@ -30,6 +30,10 @@
             </div>
         </form>
     </div>
+    <div class='footer'>
+        <footer>
+            <hr>
+            <p>Scandiweb Test Assigment</p>
+        </footer>
 </body>
-
 </html>

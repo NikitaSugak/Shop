@@ -11,17 +11,19 @@
     <div class='container'>
         <h1>Product list</h1>
         <a href="/addproduct"><input type="button" value="ADD" /></a>
-
-        <form  method="POST">
+        <form method="POST">
             <button name="button">MASS DELETE</button>
-            <form>
-            <hr>
+        </form>
+        <hr>
+        <?php
+        include_once "controller/showListItems.php";
+        ?>
     </div>
-    <br />
-
-    <?php
-    include_once "controller/showListItems.php";
-    ?>
+    <div class='footer'>
+        <footer>
+            <hr>
+            <p>Scandiweb Test Assigment</p>
+        </footer>
+    </div>
 </body>
-
 </html>

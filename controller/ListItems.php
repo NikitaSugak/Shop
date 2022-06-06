@@ -19,7 +19,6 @@ class listItems
     public function drowListItems()
     {
         $this->setList();
-        echo "<div class='container'>";
         for ($i = 0; $i < count($this->items); $i++) {
             echo "<div class='tile'>";
             echo "<input type='checkbox' id='.delete-checkbox' class='delete-checkbox' name='checkItems[]' value ='" . $this->items[$i]->getId() . "'> ";
@@ -27,6 +26,5 @@ class listItems
             $this->items[$i]->printValue();
             echo "</div>";
         }
-        echo "</div>";
     }
 }
