@@ -30,7 +30,7 @@ class Disc extends Item
 
     public function printValue()
     {
-        echo "Size " . $this->getSize() . " MB <br />";
+        echo "Size " . $this->getSize() . " MB";
     }
 
     public function save_in_bd()

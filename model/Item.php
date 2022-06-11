@@ -3,7 +3,7 @@
 /**
 Class model item
  */
-class Item
+abstract class Item
 {
     private $id;
     protected $sku;
@@ -43,7 +43,7 @@ class Item
         return $this->id;
     }
 
-    function getSKU()
+    function getSku()
     {
         return $this->sku;
     }
@@ -65,7 +65,7 @@ class Item
         echo number_format($this->price, 2, '.', '') . " $" . "<br />";
     }
 
-    public static function delete_in_bd($idCheckItems)
+    public static function delete_in_db($idCheckItems)
     {
         for ($i = 0; $i < count($idCheckItems); $i++) {
             $sql = "DELETE FROM shop.items WHERE id =  '$idCheckItems[$i]'";

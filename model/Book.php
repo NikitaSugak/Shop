@@ -30,7 +30,7 @@ class Book extends Item
 
     public function printValue()
     {
-        echo "Weight " . $this->getWeight(). " KG <br />";
+        echo "Weight " . $this->getWeight(). " KG";
     }
 
     public function save_in_bd()

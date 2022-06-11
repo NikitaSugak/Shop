@@ -66,7 +66,7 @@ class Furniture extends Item
 
     public function printValue()
     {
-        echo "Dimension " . $this->getHeight() . "x" . $this->getWidth() . "x" . $this->getLength() . "<br />";
+        echo "Dimension " . $this->getHeight() . "x" . $this->getWidth() . "x" . $this->getLength();
     }
 
     public function save_in_bd()
