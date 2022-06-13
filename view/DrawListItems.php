@@ -3,7 +3,12 @@ include_once './controller/ListItems.php';
 
 class DrawListItems
 {
-    public function drowListItems()
+    function __construct()
+    {
+        $this->drowListItems();
+    }
+
+    function drowListItems()
     {
         $list = new ListItems();
 

@@ -58,6 +58,8 @@ abstract class Item
         return $this->price;
     }
 
+    abstract function printValue();
+
     public function printAboutItem()
     {
         echo $this->sku . "<br />";

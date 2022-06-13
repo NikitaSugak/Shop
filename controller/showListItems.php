@@ -1,17 +1,7 @@
 <?php
-//include_once "ListItems.php";
 include_once "Database.php";
 include_once './model/Item.php';
-include_once './view/DrawListItems';
+include_once './view/DrawListItems.php';
+include_once 'ListProduct.php';
 
-if (isset($_GET["register_true"])) {
-    if ($_GET["register_true"] == 'no') {
-        echo 'Добавление товара прошло неуспешно, такой sku уже существует';
-    }
-}
-
-$list = new DrawListItems();
-$list->drowListItems();
-if (isset($_POST["checkItems"])) {
-    Item::delete_in_db($_POST["checkItems"]);
-}
+new ListProduct();
