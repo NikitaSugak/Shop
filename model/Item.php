@@ -57,6 +57,8 @@ abstract class Item
     {
         return $this->price;
     }
+    
+    abstract function printValue();
 
     abstract function printValue();
 
